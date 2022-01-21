@@ -25,7 +25,8 @@ def sagittalSegmentAngle(dataset, colX1, colZ1, colX2, colZ2):
 
     # Running a for loop so that each value of x and z are synced up between the two desired
     # marker points in the cluster. Will creates lists for segment length, the calculated
-    # adjacent length and the calculated angle.
+    # adjacent length and the calculated angle. Uses .iloc from the pandas package to access
+    # the dataframe and index properly. First [] is the row, second [] is the columns
     for value in range(len(dataset.iloc[:][colX1])):
         x1 = dataset.iloc[value][colX1]
         z1 = dataset.iloc[value][colZ1]
@@ -67,6 +68,7 @@ data = pd.read_csv(
 
 # print(data)
 
+# Testing whether function gives expected outputs for first 5 rows
 testAngle, testSeg, testAdj = sagittalSegmentAngle(
     data, 'RSK1', 'RSK1.2', 'RSK3', 'RSK3.2')
 
