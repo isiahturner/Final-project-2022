@@ -73,5 +73,6 @@ testAngle, testSeg, testAdj = sagittalSegmentAngle(
     data, 'RSK1', 'RSK1.2', 'RSK3', 'RSK3.2')
 
 print(testAngle[0:5])
-print(testSeg[0:5])
-print(testAdj[0:5])
+print(type(testAngle))
+# Need to visualize my angles, C3D viewer to check. Once you get segment angles, combine to get joint angles, visualize that as well
+# Elbow = complimentary angle
