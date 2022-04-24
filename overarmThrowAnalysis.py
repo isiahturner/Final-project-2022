@@ -1,7 +1,6 @@
 # Importing modules that are needed throughout the script
 from pathlib import Path
 import os
-import matplotlib
 import pandas as pd
 import numpy as np
 import fontstyle
@@ -137,7 +136,7 @@ def visualizeForces(data, titleName):
 
     ax1.set_title(titleName + ' - Force Plate 1')
     ax1.set_xlabel('Percentage of Movement (%)')
-    ax1.set_ylabel('Force (N)')
+    ax1.set_ylabel('Force (Bodyweight)')
     ax1.set_ylim(-100, 1000)
     ax1.legend()
 
@@ -148,7 +147,7 @@ def visualizeForces(data, titleName):
 
     ax2.set_title(titleName + ' - Force Plate 2')
     ax2.set_xlabel('Percentage of Movement (%)')
-    ax2.set_ylabel('Force (N)')
+    ax2.set_ylabel('Force (Bodyweight)')
     ax2.set_ylim(-100, 1000)
     ax2.legend()
 
@@ -332,17 +331,18 @@ for file in files:
 print(" ")
 for key in filesToCombine.keys():
     print(key)
-# print(filesToCombine.keys())
+print(filesToCombine.keys())
 print('_____' * 10)
 
 # print(
 #     filesToCombine['C:\\Users\\Isiah Turner\\OneDrive\\Documents\\Final project 2022\\S1_DP_04_M.csv'])
 # # Calling the forceComparison function for 3 participants
 
-forceFigures = forceComparison(S104=filesToCombine['C:\\Users\\Isiah Turner\\OneDrive\\Documents\\Final project 2022\\S1_DP_04_M.csv'],
-                               S1DP01=filesToCombine['C:\\Users\\Isiah Turner\\OneDrive\\Documents\\Final project 2022\\S1_DP_01_WM.csv'],
-                               S1DP13=filesToCombine['C:\\Users\\Isiah Turner\\OneDrive\\Documents\\Final project 2022\\S1_DP_13_O.csv'])
+forceFigures = forceComparison(S1DP13=filesToCombine['C:\\Users\\Isiah Turner\\OneDrive\\Documents\\Final project 2022\\S1_DP_13_O.csv'],
+                               S2DP05=filesToCombine['C:\\Users\\Isiah Turner\\OneDrive\\Documents\\Final project 2022\\S2_DP_05_O.csv'])
 
+# forceFigures = segmentComparison(S1DP13=filesToCombine['C:\\Users\\Isiah Turner\\OneDrive\\Documents\\Final project 2022\\S1_DP_13_O.csv'],
+#                                  S2DP05=filesToCombine['C:\\Users\\Isiah Turner\\OneDrive\\Documents\\Final project 2022\\S2_DP_05_O.csv'])
 # segmentFigures = segmentComparison(S104 = filesToCombine['c:\\Users\\Isiah Turner\\OneDrive\\Documents\\Final project 2022\\S1_DP_04_M.csv'],
 # S1DP02 = filesToCombine['c:\\Users\\Isiah Turner\\OneDrive\\Documents\\Final project 2022\\S1_DP_01_WM.csv'],
 # S1DP13 = filesToCombine['c:\\Users\\Isiah Turner\\OneDrive\\Documents\\Final project 2022\\S1_DP_13_O.csv'])
